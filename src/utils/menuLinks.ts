@@ -1,13 +1,13 @@
-import results from "./../assets/aside/results.svg"
-import orders from "./../assets/aside/orders.svg"
-import messages from "./../assets/aside/messages.svg"
-import contrAgents from "./../assets/aside/contrAgents.svg"
-import documents from "./../assets/aside/documents.svg"
-import implementors from "./../assets/aside/implementors.svg"
-import review from "./../assets/aside/review.svg"
-import knowledge from "./../assets/aside/knowledge.svg"
-import settings from "./../assets/aside/setting.svg"
-import calls from "./../assets/aside/calls.svg"
+import results from "./../assets/images/aside/results.svg"
+import orders from "./../assets/images/aside/orders.svg"
+import messages from "./../assets/images/aside/messages.svg"
+import contrAgents from "./../assets/images/aside/contrAgents.svg"
+import documents from "./../assets/images/aside/documents.svg"
+import implementors from "./../assets/images/aside/implementors.svg"
+import review from "./../assets/images/aside/review.svg"
+import knowledge from "./../assets/images/aside/knowledge.svg"
+import settings from "./../assets/images/aside/setting.svg"
+import calls from "./../assets/images/aside/calls.svg"
 
 export const menuLinks = [
 	{

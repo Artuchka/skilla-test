@@ -1,8 +1,8 @@
 import React from "react"
 import style from "./style.module.scss"
 import { ProgressBar } from "../../basic-components/ProgressBar"
-import arrowDownImg from "./../../assets/downArrow.svg"
-import userAvatarImg from "./../../assets/userAvatar.png"
+import arrowDownImg from "./../../assets/images/downArrow.svg"
+import userAvatarImg from "./../../assets/images/userAvatar.png"
 
 export const Header = () => {
 	return (

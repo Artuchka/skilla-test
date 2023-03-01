@@ -8,7 +8,7 @@ import { updateFilter } from "../../store/features/filters/slice"
 import { formatPayloadDate } from "../../utils/formatPayloadDate"
 import arrowLeft from "./../../assets/leftArrow.svg"
 import arrowRight from "./../../assets/rightArrow.svg"
-import calendarImg from "./../../assets/calendar.svg"
+import calendarImg from "./../../assets/images/calendar.svg"
 
 const nowDate = new Date()
 export const Calendar = () => {

@@ -1,7 +1,7 @@
 import React from "react"
 import { menuLinks } from "../../utils/menuLinks"
 import style from "./style.module.scss"
-import logoImg from "./../../assets/logo.svg"
+import logoImg from "./../../assets/images/logo.svg"
 
 export const Logo = () => {
 	return (

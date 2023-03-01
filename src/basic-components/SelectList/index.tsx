@@ -7,8 +7,8 @@ import {
 	typeOptions,
 	updateFilter,
 } from "../../store/features/filters/slice"
-import arrowDownImg from "./../../assets/downArrow.svg"
-import arrowUpImg from "./../../assets/upArrow.webp"
+import arrowDownImg from "./../../assets/images/downArrow.svg"
+import arrowUpImg from "./../../assets/images/upArrow.webp"
 import { AppDispatch } from "../../store/store"
 
 type Props = {

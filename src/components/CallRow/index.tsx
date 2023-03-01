@@ -2,8 +2,8 @@ import React, { FC } from "react"
 import { CallState } from "../../store/features/calls/slice"
 import style from "./style.module.scss"
 import { formatDuration, formatTime } from "../../utils/formatTime"
-import incomingImg from "./../../assets/incomingCall.svg"
-import outcomingImg from "./../../assets/outcominCall.svg"
+import incomingImg from "./../../assets/images/incomingCall.svg"
+import outcomingImg from "./../../assets/images/outcominCall.svg"
 
 export const CallRow: FC<CallState> = (props) => {
 	const {
