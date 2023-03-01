@@ -1,0 +1,16 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	padding: 1rem;
+
+	background-color: var(--aside-bg);
+	color: var(--text-idle);
+
+	.actions {
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+}

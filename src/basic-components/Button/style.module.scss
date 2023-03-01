@@ -1,0 +1,29 @@
+.wrapper {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	border: none;
+	outline: transparent;
+	border-radius: 0.5rem;
+	background-color: var(--button-bg);
+	color: var(--text-active);
+	padding: 1rem;
+	max-width: 200px;
+	height: 52px;
+	span {
+		font-weight: 500;
+		flex-grow: 1;
+	}
+
+	img {
+		width: 1.5rem;
+		height: 100%;
+		// color: var(--text-idle);
+	}
+	// :hover img {
+	// 	color: var(--text-active);
+	// }
+}

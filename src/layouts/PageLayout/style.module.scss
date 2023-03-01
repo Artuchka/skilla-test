@@ -1,0 +1,11 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: 240px 1fr;
+}
+
+aside {
+	grid-column: 1/2;
+}
+main {
+	grid-column: 2/3;
+}

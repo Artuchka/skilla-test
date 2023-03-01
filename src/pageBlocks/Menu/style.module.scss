@@ -1,0 +1,12 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	// background-color: var(--aside-bg);
+	// color: var(--text-idle);
+
+	.menuItem {
+		display: flex;
+		gap: 1rem;
+	}
+}
