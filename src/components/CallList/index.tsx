@@ -10,10 +10,10 @@ import { selectFilters } from "../../store/features/filters/selector"
 export const CallList = () => {
 	const dispatch = useDispatch<AppDispatch>()
 	const { calls, isLoading } = useSelector(selectCalls)
-	const { type } = useSelector(selectFilters)
+	const { type, date } = useSelector(selectFilters)
 	useEffect(() => {
 		dispatch(getAllCalls())
-	}, [type])
+	}, [type, date])
 
 	if (isLoading) {
 		// return <LoadingSkeleton />

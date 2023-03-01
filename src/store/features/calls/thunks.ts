@@ -7,10 +7,10 @@ export const getAllCalls = createAsyncThunk(
 	"calls/getAll",
 	async (_, thunkAPI) => {
 		try {
-			const { type } = (thunkAPI.getState() as RootState).filters
-			console.log({ type })
+			const { type, date } = (thunkAPI.getState() as RootState).filters
+			console.log({ type, date })
 
-			const resp = await apiInstance(makeQueryGetAll({ type }), {
+			const resp = await apiInstance(makeQueryGetAll({ type, date }), {
 				method: "POST",
 				data: {},
 			})
@@ -22,12 +22,20 @@ export const getAllCalls = createAsyncThunk(
 	}
 )
 
-function makeQueryGetAll({ type }: { type: TypeState }) {
-	let typeQuery = "&in_out="
+function makeQueryGetAll({
+	type,
+	date,
+}: {
+	type: TypeState
+	date: [string, string]
+}) {
+	let typeQuery = ""
 	if (type !== "all") {
-		typeQuery += `${type === "incoming" ? 1 : 0}`
+		typeQuery = `&in_out=${type === "incoming" ? 1 : 0}`
 	}
-	const res = `/getList?${typeQuery}`
+	const dateQuery = `&date_start=${date[0]}&date_end=${date[1]}`
+
+	const res = `/getList?${dateQuery}${typeQuery}`
 
 	return res
 }

@@ -5,10 +5,12 @@ export const typeOptions = ["all", "incoming", "outgoing"]
 export type TypeState = "all" | "incoming" | "outgoing"
 export interface FilterState {
 	type: TypeState
+	date: [string, string]
 }
 
 const initialState: FilterState = {
 	type: "all",
+	date: ["2023-02-21", "2023-02-29"],
 }
 
 export const FilterSlice = createSlice({

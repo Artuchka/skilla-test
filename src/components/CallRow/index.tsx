@@ -50,7 +50,7 @@ export const CallRow: FC<CallState> = (props) => {
 				<img src={person_avatar} alt="" />
 			</div>
 			<div className={style.number}>
-				{isIncomingCall ? to_number : from_number}
+				{isIncomingCall ? from_number : to_number}
 			</div>
 			<div className={style.rating}>{source}</div>
 			<div className={style.rating}>{source}</div>
