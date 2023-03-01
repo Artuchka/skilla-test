@@ -1,28 +1,31 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { FC, useEffect, useRef, useState } from "react"
 import style from "./style.module.scss"
 import { useDispatch, useSelector } from "react-redux"
 import { selectFilters } from "../../store/features/filters/selector"
-import { typeOptions, updateFilter } from "../../store/features/filters/slice"
+import {
+	FilterState,
+	typeOptions,
+	updateFilter,
+} from "../../store/features/filters/slice"
 import arrowDownImg from "./../../assets/downArrow.svg"
 import { AppDispatch } from "../../store/store"
 
-export const SelectList = () => {
+type Props = {
+	selected: string
+	name: keyof FilterState
+	options: string[]
+}
+export const SelectList: FC<Props> = ({ selected, options, name }) => {
 	const listRef = useRef(null)
 	const visibleRef = useRef(null)
 	const [open, setOpen] = useState(true)
-	const { type } = useSelector(selectFilters)
 	const dispatch = useDispatch<AppDispatch>()
 
 	useEffect(() => {
 		const func = (e: MouseEvent) => {
-			console.log(e)
 			const parent = (e.target as any).parentNode
 			const isInside = parent === listRef.current
 			const isOpening = parent === visibleRef.current
-			// const isChoosing = e.target.nodeName === "SPAN"
-			console.log({ isInside })
-			console.log({ isOpening })
-			console.log({ target: e.target })
 
 			if (isOpening) return
 			if (!isInside) {
@@ -54,7 +57,7 @@ export const SelectList = () => {
 				onClick={handleOpen}
 				ref={visibleRef}
 			>
-				<span className={style.active}>{type}</span>
+				<span className={style.active}>{selected}</span>
 				<img src={arrowDownImg} alt="" />
 			</div>
 
@@ -62,18 +65,16 @@ export const SelectList = () => {
 				ref={listRef}
 				className={`${style.list} ${open ? style.open : ""}`}
 			>
-				{typeOptions.map((item) => {
+				{options.map((item) => {
 					return (
 						<span
 							onClick={() => {
 								handleClose()
-								dispatch(
-									updateFilter({ name: "type", value: item })
-								)
+								dispatch(updateFilter({ name, value: item }))
 							}}
 							key={item}
 							className={`${style.option} ${
-								item === type ? style.active : ""
+								item === selected ? style.active : ""
 							}`}
 						>
 							{item}
