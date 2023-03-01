@@ -19,6 +19,7 @@ export interface AbuseState {
 	support_answer_status: number
 	answers: AnswerState[]
 }
+
 export interface CallState {
 	id: string
 	partnership_id: string
@@ -35,7 +36,7 @@ export interface CallState {
 	to_number: string
 	to_extension: string
 	is_skilla: number
-	status: string
+	status: "Не дозвонился" | "Дозвонился"
 	record: string
 	line_number: string
 	in_out: number
@@ -53,13 +54,16 @@ export interface CallState {
 	person_surname: string
 	person_avatar: string
 }
+
 export interface CallsState {
 	calls: CallState[]
+	totalCalls: number
 	isLoading: boolean
 }
 
 const initialState: CallsState = {
 	calls: [],
+	totalCalls: 0,
 	isLoading: false,
 }
 
@@ -72,7 +76,10 @@ export const CallsSlice = createSlice({
 		builder.addCase(getAllCalls.pending, (state) => {
 			state.isLoading = true
 		})
-		builder.addCase(getAllCalls.fulfilled, (state) => {
+		builder.addCase(getAllCalls.fulfilled, (state, { payload }) => {
+			console.log(payload)
+			state.calls = payload.results
+			state.totalCalls = Number(payload.total_rows)
 			state.isLoading = false
 		})
 		builder.addCase(getAllCalls.rejected, (state) => {

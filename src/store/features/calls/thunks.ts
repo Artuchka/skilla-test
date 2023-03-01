@@ -5,17 +5,9 @@ export const getAllCalls = createAsyncThunk(
 	"calls/getAll",
 	async (_, thunkAPI) => {
 		try {
-			const resp = await apiInstance(`/calls`, {
+			const resp = await apiInstance(`/getList`, {
 				method: "POST",
-				data: {
-					adsConfig: {
-						long: 4,
-						half: 2,
-						short: 6,
-						category: 5,
-						longTall: 5,
-					},
-				},
+				data: {},
 			})
 
 			return thunkAPI.fulfillWithValue(resp.data)
