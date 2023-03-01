@@ -2,8 +2,9 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 export const typeOptions = ["all", "incoming", "outgoing"]
 
+export type TypeState = "all" | "incoming" | "outgoing"
 export interface FilterState {
-	type: "all" | "incoming" | "outgoing"
+	type: TypeState
 }
 
 const initialState: FilterState = {

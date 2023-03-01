@@ -7,7 +7,7 @@ export const Calls = () => {
 	return (
 		<div className={style.wrapper}>
 			<CallFilter />
-			{/* <CallList /> */}
+			<CallList />
 		</div>
 	)
 }

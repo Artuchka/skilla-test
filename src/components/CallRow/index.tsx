@@ -36,7 +36,7 @@ export const CallRow: FC<CallState> = (props) => {
 		person_surname,
 		person_avatar,
 	} = props
-	const isIncomingCall = in_out === 0
+	const isIncomingCall = in_out === 1
 	return (
 		<div className={style.wrapper}>
 			<div className={style.checked}>

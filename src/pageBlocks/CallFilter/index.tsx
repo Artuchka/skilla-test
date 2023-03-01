@@ -10,7 +10,7 @@ export const CallFilter: FC = () => {
 
 	return (
 		<div className={style.wrapper}>
-			<SelectList selected={type} options={typeOptions} />
+			<SelectList selected={type} options={typeOptions} name="type" />
 		</div>
 	)
 }

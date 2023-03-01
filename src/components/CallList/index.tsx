@@ -5,13 +5,15 @@ import { selectCalls } from "../../store/features/calls/selector"
 import { getAllCalls } from "../../store/features/calls/thunks"
 import { CallRow } from "../CallRow"
 import style from "./style.module.scss"
+import { selectFilters } from "../../store/features/filters/selector"
 
 export const CallList = () => {
 	const dispatch = useDispatch<AppDispatch>()
 	const { calls, isLoading } = useSelector(selectCalls)
+	const { type } = useSelector(selectFilters)
 	useEffect(() => {
 		dispatch(getAllCalls())
-	}, [])
+	}, [type])
 
 	if (isLoading) {
 		// return <LoadingSkeleton />
