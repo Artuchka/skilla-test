@@ -1,11 +1,26 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: 240px 1fr;
+	grid-template-rows: 4rem 1fr;
+	min-height: 100vh;
+
+	grid-template-areas:
+		"aside header"
+		"aside main";
 }
 
 aside {
-	grid-column: 1/2;
+	grid-area: aside;
+	height: 100%;
+	background-color: var(--aside-bg);
 }
 main {
-	grid-column: 2/3;
+	grid-area: main;
+	height: 100%;
+	background-color: var(--main-bg);
+}
+
+header {
+	grid-area: header;
+	// box-shadow: 0 0 1000px 1000px rgb(213, 8, 8);
 }

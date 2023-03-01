@@ -2,11 +2,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	// background-color: var(--aside-bg);
-	// color: var(--text-idle);
-
 	.menuItem {
 		display: flex;
 		gap: 1rem;
+		color: var(--text-idle);
+		text-decoration: none;
+
+		&.active {
+			color: var(--text-active);
+		}
 	}
 }
