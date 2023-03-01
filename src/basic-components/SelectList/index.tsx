@@ -8,6 +8,7 @@ import {
 	updateFilter,
 } from "../../store/features/filters/slice"
 import arrowDownImg from "./../../assets/downArrow.svg"
+import arrowUpImg from "./../../assets/upArrow.webp"
 import { AppDispatch } from "../../store/store"
 
 type Props = {
@@ -18,7 +19,7 @@ type Props = {
 export const SelectList: FC<Props> = ({ selected, options, name }) => {
 	const listRef = useRef(null)
 	const visibleRef = useRef(null)
-	const [open, setOpen] = useState(true)
+	const [open, setOpen] = useState(false)
 	const dispatch = useDispatch<AppDispatch>()
 
 	useEffect(() => {
@@ -58,7 +59,7 @@ export const SelectList: FC<Props> = ({ selected, options, name }) => {
 				ref={visibleRef}
 			>
 				<span className={style.active}>{selected}</span>
-				<img src={arrowDownImg} alt="" />
+				<img src={open ? arrowUpImg : arrowDownImg} alt="" />
 			</div>
 
 			<div

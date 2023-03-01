@@ -1,2 +1,22 @@
 .wrapper {
+	cursor: pointer;
+	position: relative;
+	padding-inline: 1rem;
+	.visible {
+		img {
+			width: 2rem;
+		}
+	}
+	.calendar {
+		pointer-events: none;
+		opacity: 0;
+		position: absolute;
+		z-index: 100;
+		top: 100%;
+		right: 0;
+		&.open {
+			pointer-events: initial;
+			opacity: 1;
+		}
+	}
 }
