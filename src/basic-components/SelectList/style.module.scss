@@ -1,0 +1,44 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: max-content;
+	position: relative;
+	width: 200px;
+
+	.visible {
+		display: flex;
+		gap: 0.5rem;
+		font-size: 1.5rem;
+		img {
+			width: 1rem;
+		}
+	}
+	.list {
+		opacity: 0;
+		pointer-events: none;
+
+		&.open {
+			opacity: 1;
+			pointer-events: inherit;
+		}
+
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		z-index: 1000;
+		top: 100%;
+		right: 0;
+		border-radius: 0.3rem;
+		overflow: hidden;
+
+		.option {
+			background-color: #fff;
+			padding: 1rem;
+
+			&.active {
+				background-color: rgb(175, 175, 233);
+			}
+		}
+	}
+}

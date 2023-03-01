@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
 import callsReducer from "./features/calls/slice"
+import filterReducer from "./features/filters/slice"
 
 export const store = configureStore({
 	reducer: {
 		calls: callsReducer,
+		filters: filterReducer,
 	},
 })
 
